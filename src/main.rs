@@ -1,4 +1,4 @@
-use iced::{Scrollable, scrollable, Application, Container, Text, Element, Column, Command, Settings, Length, HorizontalAlignment};
+use iced::{Scrollable, scrollable, Application, Container, Text, Element, Column, Command, Settings, Length, HorizontalAlignment, Clipboard};
 
 enum App {
     Loading,
@@ -44,7 +44,7 @@ impl Application for App {
         String::from("Application Boiler Plate")
     }
 
-    fn update(&mut self, message: Message) -> Command<Message> {
+    fn update(&mut self, message: Message, _clipboard: &mut Clipboard) -> Command<Message> {
         match self {
             App::Loading => {
                 match message {
